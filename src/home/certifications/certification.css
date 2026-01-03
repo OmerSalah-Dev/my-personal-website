@@ -1,0 +1,373 @@
+/* Main Container for the entire Certifications section (no direct styles applied here, acts as a wrapper) */
+
+/* Header Section */
+.certifications-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.certifications-header h2 {
+  font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+  color: #222;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  padding-bottom: 5px;
+  background-image: linear-gradient(
+    to right,
+    #10b981 0%,
+    rgba(16, 185, 129, 0) 70%
+  );
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+.certifications-header p {
+  font-size: clamp(0.90rem, 1.5vw, 1.15rem);
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0.5rem auto 0 auto;
+}
+.grid-card-container {
+  display: grid;
+  gap: 25px;
+}
+/* Individual Certification Card Container */
+.certifications-list-container {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  max-width: 1100px;
+  gap: 20px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative; /* Added for absolute positioning of the badge */
+}
+
+/* Provider badge for mobile view */
+.certification-provider-badge {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+  background-color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  gap: 3px;
+}
+
+.certification-provider-badge svg {
+  width: 18px;
+  height: 18px;
+}
+
+.certification-provider-badge .provider-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Left Side of the Certification Card */
+.certification-container-left {
+  background: linear-gradient(
+    to bottom right,
+    hsl(220, 20%, 18%),
+    hsl(220, 22%, 14%),
+    hsl(220, 25%, 10%)
+  );
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden; /* To contain the overlays */
+}
+.certification-icon {
+  padding: 12px;
+  z-index: 2; /* Ensure icon is above overlays */
+}
+.certification-icon svg {
+  width: 80px;
+  height: 80px;
+}
+.certification-container-left h4 {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  color: #fff;
+  font-weight: 700;
+  margin: 0px;
+  z-index: 2; /* Ensure text is above overlays */
+}
+.certification-container-left p {
+  font-size: clamp(0.85rem, 1.3vw, 1rem);
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.025em;
+  text-align: center;
+  z-index: 2; /* Ensure text is above overlays */
+}
+
+/* New overlay and glow styles */
+.grid-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.glow-orb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  filter: blur(48px);
+  z-index: 0;
+}
+
+.certification-container-left.glow-nodejs .glow-orb {
+  background: hsl(101, 38%, 51%, 0.2);
+}
+.certification-container-left.glow-nodejs .icon-glow {
+  filter: drop-shadow(0 0 20px hsla(101, 38%, 51%, 0.4));
+}
+/* modifier for HTML */
+.certification-container-left.glow-html .glow-orb {
+ background: hsl(15, 88%, 55%, 0.25);
+}
+.certification-container-left.glow-html .icon-glow {
+  filter: drop-shadow(0 0 20px hsla(15, 88%, 55%, 0.45));
+}
+/* Modifier for JavaScript */
+.certification-container-left.glow-js .glow-orb {
+background: hsl(53, 93%, 54%, 0.2);
+}
+.certification-container-left.glow-js .icon-glow {
+   filter: drop-shadow(0 0 20px hsla(53, 93%, 54%, 0.4));
+}
+
+/* Right Side of the Certification Card */
+.certification-container-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 20px 30px 20px 0px;
+}
+.certification-container-right h4 {
+  font-size: clamp(1rem, 2.4vw, 1.3rem);
+  color: #222;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.certification-container-right p {
+  font-size: clamp(0.85rem, 1.3vw, 1.05rem);
+  color: #6b7280;
+  line-height: 1.6;
+  text-align: start;
+}
+
+/* Rating Section */
+
+.rating {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: start;
+  gap: 4px;
+}
+.rating-score {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #333;
+}
+.rating-stars-container {
+  display: flex;
+  align-items: center;
+}
+.rating-stars-container svg {
+  width: 18px;
+  height: 18px;
+}
+.star-filled svg {
+  color: #ffc107;
+}
+.star-empty svg {
+  color: #d1d5db; /* A light grey */
+}
+.rating-reviews {
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+/* Divider */
+.certification-divider {
+  border: none;
+  border-top: 2px solid #cccccc;
+}
+
+/* Footer Section of the Certification Card */
+.certification-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.provider,
+.duration,
+.date-completed {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 500;
+  color: #374151; /* Neutral dark grey for text */
+}
+/* Apply specific colors only to the SVG icons within footer elements */
+.provider svg {
+  color: #a435f0;
+}
+.duration svg {
+  color: #3b82f6; /* Blue */
+}
+.date-completed svg {
+  color: #10b981; /* Green */
+}
+
+/* Responsive Styles (Media Queries) */
+
+/* Tablet and smaller screens */
+@media (max-width: 868px) {
+  .grid-card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+  .certifications-list-container {
+    grid-template-columns: 1fr;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    gap: 5px;
+  }
+
+  .certification-provider-badge {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .certification-provider-badge svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .certification-provider-badge .provider-name {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #333;
+  }
+  .certification-icon svg {
+    width: 65px;
+    height: 65px;
+  }
+  .certification-container-left {
+    height: 200px;
+    border-radius: 8px 8px 0 0;
+  }
+  .certification-container-right {
+    padding: 15px; /* Adjust padding for stacked layout */
+  }
+  .certification-container-right h4 {
+    font-size: 1rem;
+  }
+  .certification-container-right p {
+    font-size: clamp(0.85rem, 1.3vw, 1.05rem);
+    margin-bottom: 10px;
+  }
+  .rating-stars-container svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .provider,
+  .duration,
+  .date-completed {
+    font-size: 0.8rem;
+  }
+  .rating-score {
+    font-weight: 650;
+    font-size: 0.85rem;
+  }
+  .rating-reviews {
+    font-size: 0.75rem;
+  }
+  .rating-main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .provider {
+    display: none;
+  }
+}
+
+/* Mobile screens */
+
+@media (max-width: 700px) {
+  .grid-card-container {
+    grid-template-columns: 1fr;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .certification-provider-badge svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .certification-provider-badge .provider-name {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: #333;
+  }
+}
+
+/* Responsive Styles for alternating layout on large screens */
+
+@media (min-width: 869px) {
+  .certifications-list-container:nth-child(even) {
+    direction: rtl;
+  }
+  .certifications-list-container:nth-child(even)
+    > .certification-container-left,
+  .certifications-list-container:nth-child(even)
+    > .certification-container-right {
+    direction: ltr;
+  }
+  /* Adjust padding for the right container when its on the left */
+  .certifications-list-container:nth-child(even)
+    .certification-container-right {
+    padding: 20px 0 20px 30px;
+  }
+}
+
+/* Animations */
+
+@layer utilities {
+  .animate-float {
+    animation: float 7s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+}

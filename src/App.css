@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+.app-header-container {
+  max-width: 1350px;
+  margin: auto;
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+  padding: 8px 10px 0;
+  background: #ffffff; 
+}
+.app-body-container {
+  max-width: 1350px;
+  margin: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.section-spacing {
+  margin-bottom: 30px; /* Consistent spacing between sections */
+}
+
+.section-divider {
+  border: none;
+  border-top: 1px solid #e0e0e0; /* Subtle grey line */
+  margin: 40px 0; /* Vertical margin for the divider */
+}
+
+.scroll-target {
+  scroll-margin-top: 100px; /* Offset for the sticky header */
+}
+
+

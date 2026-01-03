@@ -1,0 +1,101 @@
+.skills-main-container {
+  border-radius: 15px;
+}
+
+.skills-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.skills-header h2 {
+  font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+  color: #222;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  display: inline-block; 
+  padding-bottom: 5px;
+  background-image: linear-gradient(to right, #10b981 0%, rgba(16, 185, 129, 0) 70%);
+  background-size: 100% 2px; 
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+.skills-header p {
+  font-size: clamp(0.85rem, 1.5vw, 1.15rem);
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0.5rem auto 0 auto;
+}
+.skills-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 5px;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.skill-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.skill-icon {
+  font-size: clamp(1.5rem, 4vw, 2.5rem); 
+  margin-bottom: 5px;
+  color: #10b981;
+  line-height: 1;
+}
+
+.skill-icon svg {
+  width: clamp(40px, 6vw, 50px);
+  height: clamp(40px, 6vw, 50px);
+  line-height: 1;
+  display: block; /* Remove extra space below inline elements */
+}
+
+.skill-name {
+  font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+  font-weight: 600;
+  color: #333;
+}
+
+
+@media (max-width: 576px) {
+  .skills-grid-container {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 8px;
+    padding: 8px; 
+  }
+  .skill-item {
+    padding: 6px 3px; 
+    min-height: 60px; 
+  
+    flex: 0 0 calc(25% - 6px);
+    max-width: calc(25% - 6px);
+  }
+  .skill-icon {
+    font-size: 1.1rem; 
+    margin-bottom: 5px;
+  }
+  .skill-name {
+    font-weight: 400;
+  }
+}

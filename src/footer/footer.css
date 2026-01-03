@@ -1,0 +1,34 @@
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 100px; 
+  background-color: #fff; 
+  padding: 20px 0;
+
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+
+  /* box-shadow: 0 4px 6px rgba(189, 228, 216, 1); */
+}
+
+.footer-container h5 {
+  color: #10b981; /* Primary green for heading */
+  margin-bottom: 8px; /* Space below heading */
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.footer-container p {
+  color: #333; /* Soft black for paragraph */
+  margin-top: 0;
+  font-size: clamp(0.85rem, 1.3vw, 1rem);
+}
+
