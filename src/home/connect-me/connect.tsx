@@ -208,7 +208,7 @@ function Connect() {
             <label htmlFor="message"> Message: </label>
             <textarea
               id="message"
-              placeholder="Your message..."
+              placeholder="your message..."
               value={message}
               onChange={handleInputChange(setMessage, "message")}
               required
